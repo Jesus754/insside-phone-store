@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "8b88654d-5a84-462c-ad95-0e173af6dff3",
+		"name": "Electronic Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Phone",
+			"item": [
+				{
+					"name": "PostPhone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":1,\r\n    \"brand\": \"Motorola\",\r\n    \"model\":\"One Hyper\",\r\n    \"price\":1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/phone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutPhone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":1,\r\n    \"brand\":\"Motorola2\",\r\n    \"model\":\"One TO MANY\",\r\n    \"price\":70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/phone/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"phone",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePhone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/phone/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"phone",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "PostOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 3,\r\n    \"client\" : {\r\n        \"name\" : \"Jesus\",\r\n        \"lastName\": \"Siri\",\r\n        \"dni\":\"35412754\",\r\n        \"address\": \"Maipu 259\",\r\n        \"phoneNumber\": \"12131251\"\r\n    },\r\n    \"phones\": [\r\n        {\r\n            \"code\":\"1\"\r\n        }\r\n      \r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "PostClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Jesus\",\r\n    \"lastName\": \"Siri\",\r\n    \"dni\":\"35412755\",\r\n    \"address\": \"Maipu 259\",\r\n    \"phoneNumber\": \"12131251\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Jesus\",\r\n    \"lastName\": \"Siri\",\r\n    \"dni\":\"35412754\",\r\n    \"address\": \"Maipu 259\",\r\n    \"phoneNumber\": \"12131251\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/client/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"client",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/electronicstore/client/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"electronicstore",
+								"client",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

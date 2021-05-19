@@ -16,7 +16,7 @@ public class ExeptionConfig {
 
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	@ExceptionHandler({BadRequestException.class,org.hibernate.exception.ConstraintViolationException.class})
+	@ExceptionHandler({BadRequestException.class,org.hibernate.exception.ConstraintViolationException.class,DataAccessException.class,org.springframework.web.bind.MethodArgumentNotValidException.class})
 	@ResponseBody
     public ErrorResponseDTO badRequest( Exception exception) {
 		return new ErrorResponseDTO(HttpStatus.BAD_REQUEST, exception.getMessage());
@@ -30,7 +30,7 @@ public class ExeptionConfig {
     }
 	
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler({DataAccessException.class})
+	@ExceptionHandler({Exception.class})
 	@ResponseBody
     public ErrorResponseDTO InternalServerError(Exception exception) {
 		return new ErrorResponseDTO(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
